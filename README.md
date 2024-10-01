@@ -36,7 +36,7 @@ Alternatively, you can use the project on platforms like Replit or GitHub Pages 
 ## Demo
 
 You can try out the app live at this
-[here](https://calories-calculator-pounds.glitch.me)
+[here!](https://calories-calculator-pounds.glitch.me)
 
 ## File Structure
 
@@ -54,6 +54,6 @@ Mobile Enhancements: Further optimize the app for mobile devices.
 License
 This project is open-source and available under the MIT License.
 
-## You built this with Glitch!
+
 
 [Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
