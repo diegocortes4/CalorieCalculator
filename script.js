@@ -15,5 +15,5 @@ document.getElementById('proteinButton').addEventListener('click', function() {
     const recommendedProteinIntake = weight * proteinPerPound;
 
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `<p>Your recommended daily protein intake for muscle growth ${Math.round(recommendedProteinIntake)} grams.</p>`;
+    resultDiv.innerHTML = `<p>Your recommended daily protein intake for muscle growth is around ${Math.round(recommendedProteinIntake)} grams.</p>`;
 });
