@@ -1,31 +1,35 @@
 document.getElementById('calorieButton').addEventListener('click', function() {
-    const weight = parseFloat(document.getElementById('weight').value);
-    const age = parseInt(document.getElementById('age').value);
-    const heightFeet = parseInt(document.getElementById('heightFeet').value);
-    const heightInches = parseInt(document.getElementById('heightInches').value);
+    const weight = document.getElementById('weight').value;
+    const heightFeet = document.getElementById('heightFeet').value;
+    const heightInches = document.getElementById('heightInches').value;
+    const age = document.getElementById('age').value;
 
-    const heightInCm = (heightFeet * 30.48) + (heightInches * 2.54);
+    if (!weight || !heightFeet || !heightInches || !age) {
+        alert("Please enter your weight, height, and age.");
+        return;
+    }
 
-    // Use a simple BMR formula for men: BMR = 66 + (6.23 × weight in lbs) + (12.7 × height in inches) - (6.8 × age)
-    // For women: BMR = 655 + (4.35 × weight in lbs) + (4.7 × height in inches) - (4.7 × age)
-    const bmrMen = 66 + (6.23 * weight) + (12.7 * ((heightFeet * 12) + heightInches)) - (6.8 * age);
-    const bmrWomen = 655 + (4.35 * weight) + (4.7 * ((heightFeet * 12) + heightInches)) - (4.7 * age);
+    // Convert height to inches
+    const totalHeightInches = (parseInt(heightFeet) * 12) + parseInt(heightInches);
 
-    const maintenanceCaloriesMen = bmrMen * 1.2; // Assuming sedentary activity level
-    const maintenanceCaloriesWomen = bmrWomen * 1.2; // Assuming sedentary activity level
+    // Calculate Basal Metabolic Rate (BMR) using Mifflin-St Jeor Equation (for men)
+    const maintenanceCalories = (10 * weight) + (6.25 * totalHeightInches * 2.54) - (5 * age) + 5;
 
-    const idealCaloriesMen = maintenanceCaloriesMen - 500; // To lose weight
-    const idealCaloriesWomen = maintenanceCaloriesWomen - 500; // To lose weight
+    // Calculate calories to lose 1 pound per week (500 calorie deficit per day)
+    const idealCalories = maintenanceCalories - 500;
 
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `
-        <p>For Men: Your ideal daily calorie intake to lose weight is approximately ${Math.round(idealCaloriesMen)} calories.</p>
-        <p>For Women: Your ideal daily calorie intake to lose weight is approximately ${Math.round(idealCaloriesWomen)} calories.</p>
-    `;
+    resultDiv.innerHTML = `<p>Your ideal daily calorie intake to lose approximately 1 pound per week is around ${Math.round(idealCalories)} calories.</p>`;
 });
 
 document.getElementById('proteinButton').addEventListener('click', function() {
-    const weight = parseFloat(document.getElementById('weight').value);
+    const weight = document.getElementById('weight').value;
+
+    if (!weight) {
+        alert("Please enter your weight.");
+        return;
+    }
+
     const proteinPerPound = 1;
     const recommendedProteinIntake = weight * proteinPerPound;
 
