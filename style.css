@@ -1,8 +1,8 @@
 /* General Style */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url(https://cdn.glitch.global/5b60c412-09f2-4982-aba2-bdcb74745c4d/mohamed-fareed-rbSNsoXk-3A-unsplash.jpg?v=1728027900272) no-repeat center center fixed; /* Background image from Unsplash */
-    background-size: cover; /* Make sure the image covers the screen */
+    background: url(https://cdn.glitch.global/5b60c412-09f2-4982-aba2-bdcb74745c4d/mohamed-fareed-rbSNsoXk-3A-unsplash.jpg?v=1728027900272) no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     text-align: center;
     padding: 40px;
@@ -19,15 +19,9 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Logo Styling */
-.logo {
-    max-width: 150px;
-    margin-bottom: 20px;
-}
-
 h1 {
     font-family: 'Montserrat', sans-serif;
-    color: #ff6f00; /* Vibrant Orange for Headline */
+    color: #ff6f00;
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -44,7 +38,7 @@ label {
 }
 
 input {
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 15px;
     width: 100%;
     border: none;
@@ -59,7 +53,15 @@ input:focus {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Button Styles */
+.height-container {
+    display: flex;
+    gap: 10px;
+}
+
+.height-container input {
+    width: 50%; /* Make each input take half the width of the container */
+}
+
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -67,7 +69,7 @@ input:focus {
 }
 
 button {
-    background-color: #ff6f00; /* Orange for Buttons */
+    background-color: #ff6f00;
     color: #000;
     padding: 15px;
     border: none;
@@ -79,7 +81,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff8f00; /* Lighter Orange on Hover */
+    background-color: #ff8f00;
     transform: translateY(-3px);
 }
 

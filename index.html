@@ -10,10 +10,20 @@
 <body>
     <div class="container">
         <h1>Fitness Goals Calculator</h1>
-        <p>Enter your weight to calculate the ideal daily calories to lose weight and protein intake for muscle growth:</p>
+        <p>Enter your weight, height, and age to calculate the ideal daily calories to lose weight and protein intake for muscle growth:</p>
         <form id="calorieForm">
             <label for="weight">Weight (in lbs):</label>
             <input type="number" id="weight" required>
+
+            <label for="heightFeet">Height:</label>
+            <div class="height-container">
+                <input type="number" id="heightFeet" placeholder="Feet" required>
+                <input type="number" id="heightInches" placeholder="Inches" required>
+            </div>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
             <div class="button-container">
                 <button id="calorieButton" type="button">Calculate Calories</button>
                 <button id="proteinButton" type="button">Calculate Protein</button>
